@@ -115,7 +115,6 @@ def lonphrase(texte):
 	texte=textt.split(". ")
 	for i in texte:
 		compt+=1
-	print(round(compt,3))
 
 	count=0
 	texte_mot=". ".join(texte)
@@ -123,7 +122,6 @@ def lonphrase(texte):
 	texte_mot=texte_mot.split()
 	for i in texte_mot:
 		count+=1
-	print(count)
 	
 	return round((count/compt),3)
 # fin longueur moyenne de la phrase
@@ -133,11 +131,10 @@ def lonphrase(texte):
 	
 # fréquence d'un pattern en contexte
 def patcont(mot, texte):
-		"""
+	"""
 			Cherche avec le module re le pattern indiqué par l'utilisateur et renvoie les phrases dans lesquelles ce pattern se rencontre
 			Entrée: pattern, texte
-		"""
-	
+	"""
 	phrases=[]
 	texte=texte.split(".\n")
 	textt=".\t".join(texte)
@@ -150,10 +147,8 @@ def patcont(mot, texte):
 	texte=textt.split(". ")
 	print(texte)
 	for i in texte:
-		print(i)
 		if mot in i:
 			phrases.append(i)
-		print(phrases)
 	return "{}".format("\n".join(phrases))
 # fin fréquence d'un pattern
 
@@ -178,7 +173,6 @@ def SupprEsp(mot):
 		del chaineFinale[0]
 	if chaineFinale[-1] ==" ":
 		del chaineFinale[-1]
-	print(chaineFinale)
 	return "".join(chaineFinale)
 # fin de la fonction SupprEsp(mot)
 
@@ -225,9 +219,7 @@ def tok_nltk(tex):
 	"""
 	tokens_french=word_tokenize(tex, language='french')
 	res=sorted(set(tokens_french))
-	print(len(sorted(set(tokens_french))))
 	res2=(len(sorted(set(tokens_french)))/len(tokens_french))
-	print(res2)
 	return "{}".format(round(res2,3))
 #fin richesse vocabulaire
 
